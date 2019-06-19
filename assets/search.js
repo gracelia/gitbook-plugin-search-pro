@@ -222,9 +222,7 @@ require([
             showResult();
             closeSearch();
         });
-        // var __hidden_base_path__ = 'http://gateway.360cdh.autoui.4pd.io';
-        var __hidden_base_path__ = window.host || '';
-        $.getJSON(__hidden_base_path__ + '/config-center/v1/versions').then(function(data) {
+        $.getJSON('/config-center/v1/versions').then(function(data) {
           try {
             var response = data.data || {};
             var configs = response.map(function(res) {return res.key});
